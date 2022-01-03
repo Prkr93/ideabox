@@ -50,6 +50,15 @@ article > p {
 button {
   color: #EAEAF4;
   font-weight: bold;
+  border: 2px solid #353567;
+}
+
+aside > button {
+  background-color: #5356A4;
+}
+
+form > button {
+  background-color: #1F1F3D;
 }
 
 span {

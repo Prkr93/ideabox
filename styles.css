@@ -72,3 +72,11 @@ input {
 input::placeholder {
   color: #A9AAD2;
 }
+
+.toolbar {
+  background-color: #1F1F3D;
+}
+
+.comment-bar {
+  background-color: #5356A4;
+}

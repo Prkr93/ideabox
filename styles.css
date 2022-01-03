@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 img {
@@ -23,4 +24,42 @@ section {
 
 aside, main {
   float: left;
+}
+
+h1 {
+  font-size: 20px;
+  color: #EAEAF4;
+}
+
+h2 {
+  font-size: 16px;
+  color: #A9AAD2;
+}
+
+label,
+h4,
+p {
+  color: #1F1F3D;
+  font-weight: bold;
+}
+
+article > p {
+  font-weight: normal;
+}
+
+button {
+  color: #EAEAF4;
+  font-weight: bold;
+}
+
+span {
+  color: #E9E9F3;
+}
+
+input {
+  color: #1F1F3D;
+}
+
+input::placeholder {
+  color: #A9AAD2;
 }

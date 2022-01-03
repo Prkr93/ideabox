@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 16px;
+}
+
+aside {
+  max-width: 300px;
+  width: 30%;
+  background-color: #1F1F3D;
+}
+
+form {
+  background-color: #A9AAD2;
+  margin: 0;
+}
+
+section {
+  background-color: #EAEAF4;
+}
+
+aside, main {
+  float: left;
+}

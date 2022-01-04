@@ -30,6 +30,7 @@ form {
 
 section {
   background-color: #EAEAF4;
+  display: flex;
 }
 
 aside {
@@ -97,6 +98,13 @@ input::placeholder {
 
 .comment-bar {
   background-color: #5356A4;
+}
+
+form > * {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
 }
 
 .border-box {

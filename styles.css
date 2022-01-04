@@ -1,6 +1,8 @@
 body {
-  margin: 0;
+  margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
+  position: relative;
+  max-width: 1000px;
 }
 
 img {
@@ -8,9 +10,15 @@ img {
 }
 
 aside {
-  max-width: 300px;
-  width: 30%;
+  width: 25%;
+  height: 100%;
   background-color: #1F1F3D;
+}
+
+main {
+  width: 75%;
+  position: absolute;
+  right: 0;
 }
 
 form {
@@ -22,8 +30,8 @@ section {
   background-color: #EAEAF4;
 }
 
-aside, main {
-  float: left;
+aside {
+  position: absolute;
 }
 
 h1 {

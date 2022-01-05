@@ -33,9 +33,9 @@ form {
 
 section {
   background-color: #EAEAF4;
-  display: flex;
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
   justify-content: space-evenly;
-  flex-wrap: wrap;
 }
 
 aside {
@@ -161,7 +161,8 @@ input, textarea {
 article {
   background-color: #FFFFFF;
   width: 200px;
-  border: 2px solid #1F1F3D
+  border: 2px solid #1F1F3D;
+  margin-top: 20px;
 }
 
 article > *:not(div) {

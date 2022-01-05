@@ -6,7 +6,7 @@ body {
 }
 
 img {
-  max-width: 16px;
+  max-width: 25px;
 }
 
 aside {
@@ -60,6 +60,8 @@ h4,
 p {
   color: #1F1F3D;
   font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 article > p {
@@ -102,10 +104,14 @@ input::placeholder {
 
 .toolbar {
   background-color: #1F1F3D;
+  display: flex;
+  justify-content: space-between;
 }
 
 .comment-bar {
   background-color: #5356A4;
+  display: flex;
+  align-items: center;
 }
 
 form > * {
@@ -167,4 +173,9 @@ article {
 
 article > *:not(div) {
   padding: 0em 1em;
+}
+
+span {
+  font-weight: bold;
+  font-size: .8em;
 }

@@ -21,6 +21,8 @@ main {
   width: 75%;
   position: absolute;
   right: 0;
+  background-color: #EAEAF4;
+  height: 100vh;
 }
 
 form {
@@ -32,6 +34,8 @@ form {
 section {
   background-color: #EAEAF4;
   display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 aside {
@@ -152,4 +156,14 @@ input, textarea {
   flex-direction: column;
   height: 150px;
   justify-content: space-evenly;
+}
+
+article {
+  background-color: #FFFFFF;
+  width: 200px;
+  border: 2px solid #1F1F3D
+}
+
+article > *:not(div) {
+  padding: 0em 1em;
 }

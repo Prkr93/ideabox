@@ -25,15 +25,17 @@ function displayIdeas() {
   for (var i = 0; i < ideas.length; i++) {
     cardContainer.innerHTML += `
     <article id="${ideas[i].id}">
-      <div class="toolbar">
-        <img src="./assets/star.svg"/>
-        <img src="./assets/delete.svg"/>
-      </div>
-      <h4>${ideas[i].title}</h4>
-      <p>${ideas[i].body}</p>
-      <div class="comment-bar">
-        <img src="./assets/comment.svg"/>
-        <span>Comment</span>
+      <div>
+        <div class="toolbar">
+          <img src="./assets/star.svg"/>
+          <img src="./assets/delete.svg"/>
+        </div>
+        <h4>${ideas[i].title}</h4>
+        <p>${ideas[i].body}</p>
+        <div class="comment-bar">
+          <img src="./assets/comment.svg"/>
+          <span>Comment</span>
+        </div>
       </div>
     </article>`;
   };

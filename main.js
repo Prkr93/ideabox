@@ -2,6 +2,7 @@ var saveButton = document.querySelector('.save-button');
 var titleTextField = document.querySelector('#title-text-field');
 var bodyTextField = document.querySelector('#body-text-field');
 var cardContainer = document.querySelector('.card-container');
+var formField = document.querySelector('form');
 var ideas = [];
 
 saveButton.addEventListener('click', function(e) {
@@ -11,14 +12,13 @@ saveButton.addEventListener('click', function(e) {
   clearFields();
 });
 
-titleTextField.addEventListener('keyup', checkFields);
-bodyTextField.addEventListener('keyup', checkFields);
+formField.addEventListener('input', checkFields);
 
 function saveIdea() {
   if(titleTextField.value && bodyTextField.value) {
     ideas.push(new Idea(titleTextField.value, bodyTextField.value));
-  }
-}
+  };
+};
 
 function displayIdeas() {
   cardContainer.innerHTML = '';
@@ -36,19 +36,18 @@ function displayIdeas() {
         <span>Comment</span>
       </div>
     </article>`;
-
-  }
-}
+  };
+};
 
 function clearFields() {
   titleTextField.value = '';
   bodyTextField.value = '';
-}
+};
 
 function checkFields() {
   if (titleTextField.value && bodyTextField.value) {
     saveButton.disabled = false;
   } else {
     saveButton.disabled = true;
-  }
-}
+  };
+};

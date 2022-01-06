@@ -1,18 +1,18 @@
-var saveButton = document.querySelector('.save-button');
-var titleTextField = document.querySelector('#title-text-field');
-var bodyTextField = document.querySelector('#body-text-field');
-var cardContainer = document.querySelector('.card-container');
-var formField = document.querySelector('form');
+var saveButton = document.querySelector(".save-button");
+var titleTextField = document.querySelector("#title-text-field");
+var bodyTextField = document.querySelector("#body-text-field");
+var cardContainer = document.querySelector(".card-container");
+var formField = document.querySelector("form");
 var ideas = [];
 
-saveButton.addEventListener('click', function(e) {
+saveButton.addEventListener("click", function(e) {
   e.preventDefault();
   saveIdea();
   displayIdeas();
   clearFields();
 });
 
-formField.addEventListener('input', checkFields);
+formField.addEventListener("input", checkFields);
 
 function saveIdea() {
   if(titleTextField.value && bodyTextField.value) {
@@ -21,10 +21,10 @@ function saveIdea() {
 };
 
 function displayIdeas() {
-  cardContainer.innerHTML = '';
+  cardContainer.innerHTML = "";
   for (var i = 0; i < ideas.length; i++) {
     cardContainer.innerHTML += `
-    <article id='${ideas[i].id}'>
+    <article id="${ideas[i].id}">
       <div class="toolbar">
         <img src="./assets/star.svg"/>
         <img src="./assets/delete.svg"/>
@@ -40,8 +40,8 @@ function displayIdeas() {
 };
 
 function clearFields() {
-  titleTextField.value = '';
-  bodyTextField.value = '';
+  titleTextField.value = "";
+  bodyTextField.value = "";
 };
 
 function checkFields() {

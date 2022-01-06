@@ -54,6 +54,33 @@ h2 {
   padding-left: 5%;
 }
 
+button {
+  color: #EAEAF4;
+  font-weight: bold;
+  border: 2px solid #5356A4;
+  font-size: 1em;
+  height: 2.5em;
+  cursor: pointer;
+}
+
+span {
+  color: #E9E9F3;
+  font-weight: bold;
+  font-size: .8em;
+}
+
+input {
+  color: #1F1F3D;
+  height: 3em;
+}
+
+article {
+  background-color: #FFFFFF;
+  width: 200px;
+  border: 2px solid #1F1F3D;
+  margin-top: 20px;
+}
+
 label,
 h4,
 p {
@@ -67,15 +94,6 @@ article > p {
   font-weight: normal;
 }
 
-button {
-  color: #EAEAF4;
-  font-weight: bold;
-  border: 2px solid #5356A4;
-  font-size: 1em;
-  height: 2.5em;
-  cursor: pointer;
-}
-
 aside button {
   background-color: #5356A4;
   display: block;
@@ -87,15 +105,6 @@ aside button {
 
 form button {
   background-color: #353567;
-}
-
-span {
-  color: #E9E9F3;
-}
-
-input {
-  color: #1F1F3D;
-  height: 3em;
 }
 
 input::placeholder {
@@ -155,7 +164,6 @@ input, textarea {
     margin-bottom: 0em !important;
 }
 
-
 .border-box {
   border-top: 1px solid #5356A4;
   border-bottom: 1px solid #5356A4;
@@ -169,20 +177,8 @@ input, textarea {
   border: 2px solid #353567;
 }
 
-article {
-  background-color: #FFFFFF;
-  width: 200px;
-  border: 2px solid #1F1F3D;
-  margin-top: 20px;
-}
-
 article > *:not(div) {
   padding: 0em 1em;
-}
-
-span {
-  font-weight: bold;
-  font-size: .8em;
 }
 
 .save-button:disabled {

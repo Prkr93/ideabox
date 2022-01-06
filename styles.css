@@ -38,6 +38,7 @@ section {
   display: grid;
   grid-template-columns: 200px 200px 200px;
   justify-content: space-evenly;
+  padding-bottom: 20px;
 }
 
 h1 {

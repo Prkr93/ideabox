@@ -8,6 +8,7 @@ saveButton.addEventListener('click', function(e) {
   e.preventDefault();
   saveIdea();
   displayIdeas();
+  clearFields();
 });
 
 
@@ -35,4 +36,9 @@ function displayIdeas() {
     </article>`;
 
   }
+}
+
+function clearFields() {
+  titleTextField.value = '';
+  bodyTextField.value = '';
 }

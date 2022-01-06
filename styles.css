@@ -38,33 +38,20 @@ section {
   display: grid;
   grid-template-columns: 200px 200px 200px;
   justify-content: space-evenly;
-  padding-bottom: 20px;
+  padding-bottom: 1em;
 }
 
 h1 {
-  font-size: 18px;
+  font-size: 1.15em;
   color: #EAEAF4;
   padding-left: 5%;
 }
 
 h2 {
-  font-size: 12px;
+  font-size: 1em;
   color: #A9AAD2;
   margin: 0;
   padding-left: 5%;
-}
-
-label,
-h4,
-p {
-  color: #1F1F3D;
-  font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-article > p {
-  font-weight: normal;
 }
 
 button {
@@ -76,21 +63,10 @@ button {
   cursor: pointer;
 }
 
-aside button {
-  background-color: #5356A4;
-  display: block;
-  width: 90%;
-  height: 40px;
-  font-size: 16px;
-  margin-left: 5%;
-}
-
-form button {
-  background-color: #353567;
-}
-
 span {
   color: #E9E9F3;
+  font-weight: bold;
+  font-size: .8em;
 }
 
 input {
@@ -100,6 +76,43 @@ input {
 
 input::placeholder {
   color: #A9AAD2;
+}
+
+article {
+  width: 200px;
+  margin-top: 1em;
+}
+
+label,
+h4,
+p {
+  color: #1F1F3D;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+input, textarea {
+    border: 2px solid #5356A4;
+    resize: none;
+}
+
+article p {
+  font-weight: normal;
+}
+
+
+aside button {
+  background-color: #5356A4;
+  display: block;
+  width: 90%;
+  height: 40px;
+  font-size: 1.1em;
+  margin-left: 5%;
+}
+
+form button {
+  background-color: #353567;
 }
 
 .toolbar {
@@ -125,9 +138,10 @@ form > div > *:last-child{
   margin-bottom: 1em;
 }
 
-input, textarea {
-    border: 2px solid #5356A4;
-    resize: none;
+article > div {
+  background-color: #FFFFFF;
+  width: 200px;
+  border: 2px solid #1F1F3D;
 }
 
 .search-bar {
@@ -146,15 +160,14 @@ input, textarea {
 
 .search-bar input {
     width: 364px;
-    border: 0px;
-    padding: 0px;
+    border: 0;
+    padding: 0;
     padding-left: 1em;
     line-height: 1.5em;
     height: 2.77em;
     font-size: .9em;
-    margin-bottom: 0em !important;
+    margin-bottom: 0 !important;
 }
-
 
 .border-box {
   border-top: 1px solid #5356A4;
@@ -169,20 +182,8 @@ input, textarea {
   border: 2px solid #353567;
 }
 
-article {
-  background-color: #FFFFFF;
-  width: 200px;
-  border: 2px solid #1F1F3D;
-  margin-top: 20px;
-}
-
-article > *:not(div) {
-  padding: 0em 1em;
-}
-
-span {
-  font-weight: bold;
-  font-size: .8em;
+article > div > *:not(div) {
+  padding: 0 1em;
 }
 
 .save-button:disabled {

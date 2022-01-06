@@ -11,6 +11,8 @@ saveButton.addEventListener('click', function(e) {
   clearFields();
 });
 
+titleTextField.addEventListener('keyup', checkFields);
+bodyTextField.addEventListener('keyup', checkFields);
 
 function saveIdea() {
   if(titleTextField.value && bodyTextField.value) {
@@ -41,4 +43,12 @@ function displayIdeas() {
 function clearFields() {
   titleTextField.value = '';
   bodyTextField.value = '';
+}
+
+function checkFields() {
+  if (titleTextField.value && bodyTextField.value) {
+    saveButton.disabled = false;
+  } else {
+    saveButton.disabled = true;
+  }
 }

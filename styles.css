@@ -10,15 +10,16 @@ img {
 }
 
 aside {
-  width: 25%;
+  width: 250px;
   height: 100%;
   background-color: #1F1F3D;
   display: flex;
   flex-direction: column;
+  position: fixed;
 }
 
 main {
-  width: 75%;
+  width: 750px;
   position: absolute;
   right: 0;
   background-color: #EAEAF4;
@@ -37,10 +38,6 @@ section {
   display: grid;
   grid-template-columns: 200px 200px 200px;
   justify-content: space-evenly;
-}
-
-aside {
-  position: absolute;
 }
 
 h1 {

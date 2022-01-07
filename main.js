@@ -27,8 +27,8 @@ function displayIdeas() {
     <article id="${ideas[i].id}">
       <div>
         <div class="toolbar">
-          <img src="./assets/star.svg"/>
-          <img src="./assets/delete.svg"/>
+          <img class="favorite-button" src="./assets/star.svg"/>
+          <img class="delete-button" src="./assets/delete.svg"/>
         </div>
         <h4>${ideas[i].title}</h4>
         <p>${ideas[i].body}</p>

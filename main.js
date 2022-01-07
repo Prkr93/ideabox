@@ -14,6 +14,8 @@ saveButton.addEventListener("click", function(e) {
 
 formField.addEventListener("input", checkFields);
 
+cardContainer.addEventListener('click', toggleFavorite);
+
 function saveIdea() {
   if(titleTextField.value && bodyTextField.value) {
     ideas.push(new Idea(titleTextField.value, bodyTextField.value));
@@ -53,3 +55,14 @@ function checkFields() {
     saveButton.disabled = true;
   };
 };
+
+function toggleFavorite(e) {
+  if (e.target.classList.contains("favorite-button") ) {
+    var uniqueId = e.target.closest("article").id;
+    // for (var i = 0; i < ideas.length; i++) {
+    //   if (ideas[i].id === uniqueId) {
+    //     ideas[i].updateIdea();
+    //   }
+    }
+  }
+}

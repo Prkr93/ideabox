@@ -16,6 +16,8 @@ formField.addEventListener("input", checkFields);
 
 cardContainer.addEventListener('click', toggleFavorite);
 
+cardContainer.addEventListener('click', deleteIdea);
+
 function saveIdea() {
   if(titleTextField.value && bodyTextField.value) {
     ideas.push(new Idea(titleTextField.value, bodyTextField.value));
@@ -67,4 +69,16 @@ function toggleFavorite(e) {
     }
     ideaCard.updateIdea(uniqueId);
   }
-}
+};
+
+function deleteIdea(e) {
+  if (e.target.classList.contains("delete-button")) {
+    var uniqueId = parseInt(e.target.closest("article").id);
+    for (var i = 0; i < ideas.length; i++) {
+      if (ideas[i].id === uniqueId) {
+        ideas.splice(i, 1);
+      }
+    }
+    displayIdeas();
+  }
+};

@@ -5,7 +5,14 @@ class Idea {
     this.body = body;
     this.star = false;
   }
-  updateIdea() {
+  updateIdea(id) {
+    var article = document.getElementById(id);
+    var favoriteButton = article.querySelector(".favorite-button");
+    if (this.star) {
+      favoriteButton.src = "assets/star.svg";
+    } else {
+      favoriteButton.src = "assets/star-active.svg";
+    }
     this.star = !this.star;
   }
 }

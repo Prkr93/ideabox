@@ -58,11 +58,13 @@ function checkFields() {
 
 function toggleFavorite(e) {
   if (e.target.classList.contains("favorite-button") ) {
-    var uniqueId = e.target.closest("article").id;
-    // for (var i = 0; i < ideas.length; i++) {
-    //   if (ideas[i].id === uniqueId) {
-    //     ideas[i].updateIdea();
-    //   }
+    var uniqueId = parseInt(e.target.closest("article").id);
+    var ideaCard;
+    for (var i = 0; i < ideas.length; i++) {
+      if (ideas[i].id === uniqueId) {
+        ideaCard = ideas[i];
+      }
     }
+    ideaCard.updateIdea(uniqueId);
   }
 }

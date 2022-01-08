@@ -1,5 +1,6 @@
 var saveButton = document.querySelector(".save-button");
 var showStarredButton = document.querySelector("#showStarredButton");
+var showAllButton = document.querySelector("#showAllButton");
 var titleTextField = document.querySelector("#title-text-field");
 var bodyTextField = document.querySelector("#body-text-field");
 var cardContainer = document.querySelector(".card-container");
@@ -14,12 +15,17 @@ saveButton.addEventListener("click", function(e) {
 });
 
 formField.addEventListener("input", checkFields);
-
 cardContainer.addEventListener('click', toggleFavorite);
-
 cardContainer.addEventListener('click', deleteIdea);
+showStarredButton.addEventListener('click', function() {
+  displayStarred();
+  toggle(showStarredButton, showAllButton);
+});
 
-showStarredButton.addEventListener('click', displayStarred);
+showAllButton.addEventListener('click', function() {
+  displayIdeas();
+  toggle(showAllButton, showStarredButton);
+});
 
 function saveIdea() {
   if(titleTextField.value && bodyTextField.value) {
@@ -70,10 +76,10 @@ function toggleFavorite(e) {
     for (var i = 0; i < ideas.length; i++) {
       if (ideas[i].id === uniqueId) {
         ideaCard = ideas[i];
-      }
-    }
+      };
+    };
     ideaCard.updateIdea(uniqueId);
-  }
+  };
 };
 
 function deleteIdea(e) {
@@ -82,10 +88,10 @@ function deleteIdea(e) {
     for (var i = 0; i < ideas.length; i++) {
       if (ideas[i].id === uniqueId) {
         ideas.splice(i, 1);
-      }
-    }
+      };
+    };
     displayIdeas();
-  }
+  };
 };
 
 function displayStarred() {
@@ -107,6 +113,11 @@ function displayStarred() {
           </div>
         </div>
       </article>`;
-    }
+    };
   };
-}
+};
+
+function toggle(visibleElement, hiddenElement) {
+  visibleElement.classList.toggle("hidden");
+  hiddenElement.classList.toggle("hidden");
+};

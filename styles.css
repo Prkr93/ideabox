@@ -196,6 +196,8 @@ article > div > *:not(div) {
   cursor: pointer;
 }
 
+
+
 article .favorite-button {
   content: url("./assets/star.svg");
 }
@@ -205,5 +207,9 @@ article.true .favorite-button {
 }
 
 .hidden {
+  display: none;
+}
+
+.show-starred .false {
   display: none;
 }

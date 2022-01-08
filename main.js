@@ -1,4 +1,5 @@
 var saveButton = document.querySelector(".save-button");
+var searchTextField = document.querySelector(".search-bar input");
 var showStarredButton = document.querySelector("#showStarredButton");
 var showAllButton = document.querySelector("#showAllButton");
 var titleTextField = document.querySelector("#title-text-field");
@@ -17,14 +18,17 @@ saveButton.addEventListener("click", function(e) {
 formField.addEventListener("input", checkFields);
 cardContainer.addEventListener('click', toggleFavorite);
 cardContainer.addEventListener('click', deleteIdea);
+searchTextField.addEventListener('input', filterIdeas);
 showStarredButton.addEventListener('click', function() {
-  displayStarred();
+  displayIdeas();
   toggle(showStarredButton, showAllButton);
+  toggleStarredIdeas();
 });
 
 showAllButton.addEventListener('click', function() {
   displayIdeas();
   toggle(showAllButton, showStarredButton);
+  toggleStarredIdeas();
 });
 
 function saveIdea() {
@@ -94,30 +98,11 @@ function deleteIdea(e) {
   };
 };
 
-function displayStarred() {
-  cardContainer.innerHTML = "";
-  for (var i = 0; i < ideas.length; i++) {
-    if (ideas[i].star) {
-      cardContainer.innerHTML += `
-      <article id="${ideas[i].id}" class="${ideas[i].star}">
-        <div>
-          <div class="toolbar">
-            <img class="favorite-button" src=""/>
-            <img class="delete-button" src="./assets/delete.svg"/>
-          </div>
-          <h4>${ideas[i].title}</h4>
-          <p>${ideas[i].body}</p>
-          <div class="comment-bar">
-            <img src="./assets/comment.svg"/>
-            <span>Comment</span>
-          </div>
-        </div>
-      </article>`;
-    };
-  };
-};
-
 function toggle(visibleElement, hiddenElement) {
   visibleElement.classList.toggle("hidden");
   hiddenElement.classList.toggle("hidden");
 };
+
+function toggleStarredIdeas() {
+  cardContainer.classList.toggle("show-starred");
+}

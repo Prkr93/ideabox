@@ -31,10 +31,10 @@ function displayIdeas() {
   cardContainer.innerHTML = "";
   for (var i = 0; i < ideas.length; i++) {
     cardContainer.innerHTML += `
-    <article id="${ideas[i].id}">
+    <article id="${ideas[i].id}" class="${ideas[i].star}">
       <div>
         <div class="toolbar">
-          <img class="favorite-button" src="./assets/star.svg"/>
+          <img class="favorite-button" src=""/>
           <img class="delete-button" src="./assets/delete.svg"/>
         </div>
         <h4>${ideas[i].title}</h4>
@@ -64,6 +64,8 @@ function checkFields() {
 function toggleFavorite(e) {
   if (e.target.classList.contains("favorite-button") ) {
     var uniqueId = parseInt(e.target.closest("article").id);
+    e.target.closest("article").classList.toggle("true");
+    e.target.closest("article").classList.toggle("false");
     var ideaCard;
     for (var i = 0; i < ideas.length; i++) {
       if (ideas[i].id === uniqueId) {
@@ -87,5 +89,24 @@ function deleteIdea(e) {
 };
 
 function displayStarred() {
-  
+  cardContainer.innerHTML = "";
+  for (var i = 0; i < ideas.length; i++) {
+    if (ideas[i].star) {
+      cardContainer.innerHTML += `
+      <article id="${ideas[i].id}" class="${ideas[i].star}">
+        <div>
+          <div class="toolbar">
+            <img class="favorite-button" src=""/>
+            <img class="delete-button" src="./assets/delete.svg"/>
+          </div>
+          <h4>${ideas[i].title}</h4>
+          <p>${ideas[i].body}</p>
+          <div class="comment-bar">
+            <img src="./assets/comment.svg"/>
+            <span>Comment</span>
+          </div>
+        </div>
+      </article>`;
+    }
+  };
 }

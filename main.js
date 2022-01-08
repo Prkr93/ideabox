@@ -1,4 +1,5 @@
 var saveButton = document.querySelector(".save-button");
+var showStarredButton = document.querySelector("#showStarredButton");
 var titleTextField = document.querySelector("#title-text-field");
 var bodyTextField = document.querySelector("#body-text-field");
 var cardContainer = document.querySelector(".card-container");
@@ -17,6 +18,8 @@ formField.addEventListener("input", checkFields);
 cardContainer.addEventListener('click', toggleFavorite);
 
 cardContainer.addEventListener('click', deleteIdea);
+
+showStarredButton.addEventListener('click', displayStarred);
 
 function saveIdea() {
   if(titleTextField.value && bodyTextField.value) {
@@ -82,3 +85,7 @@ function deleteIdea(e) {
     displayIdeas();
   }
 };
+
+function displayStarred() {
+  
+}

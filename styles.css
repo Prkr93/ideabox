@@ -203,3 +203,7 @@ article .favorite-button {
 article.true .favorite-button {
   content: url("./assets/star-active.svg");
 }
+
+.hidden {
+  display: none;
+}

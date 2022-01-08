@@ -14,6 +14,10 @@ saveButton.addEventListener("click", function(e) {
 
 formField.addEventListener("input", checkFields);
 
+cardContainer.addEventListener('click', toggleFavorite);
+
+cardContainer.addEventListener('click', deleteIdea);
+
 function saveIdea() {
   if(titleTextField.value && bodyTextField.value) {
     ideas.push(new Idea(titleTextField.value, bodyTextField.value));
@@ -27,8 +31,8 @@ function displayIdeas() {
     <article id="${ideas[i].id}">
       <div>
         <div class="toolbar">
-          <img src="./assets/star.svg"/>
-          <img src="./assets/delete.svg"/>
+          <img class="favorite-button" src="./assets/star.svg"/>
+          <img class="delete-button" src="./assets/delete.svg"/>
         </div>
         <h4>${ideas[i].title}</h4>
         <p>${ideas[i].body}</p>
@@ -52,4 +56,29 @@ function checkFields() {
   } else {
     saveButton.disabled = true;
   };
+};
+
+function toggleFavorite(e) {
+  if (e.target.classList.contains("favorite-button") ) {
+    var uniqueId = parseInt(e.target.closest("article").id);
+    var ideaCard;
+    for (var i = 0; i < ideas.length; i++) {
+      if (ideas[i].id === uniqueId) {
+        ideaCard = ideas[i];
+      }
+    }
+    ideaCard.updateIdea(uniqueId);
+  }
+};
+
+function deleteIdea(e) {
+  if (e.target.classList.contains("delete-button")) {
+    var uniqueId = parseInt(e.target.closest("article").id);
+    for (var i = 0; i < ideas.length; i++) {
+      if (ideas[i].id === uniqueId) {
+        ideas.splice(i, 1);
+      }
+    }
+    displayIdeas();
+  }
 };

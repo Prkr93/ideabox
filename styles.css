@@ -190,3 +190,8 @@ article > div > *:not(div) {
   background-color: #5356A4;
   cursor: auto;
 }
+
+.favorite-button,
+.delete-button {
+  cursor: pointer;
+}

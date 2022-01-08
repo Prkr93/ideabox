@@ -23,12 +23,14 @@ showStarredButton.addEventListener('click', function() {
   displayIdeas();
   toggle(showStarredButton, showAllButton);
   toggleStarredIdeas();
+  filterIdeas();
 });
 
 showAllButton.addEventListener('click', function() {
   displayIdeas();
   toggle(showAllButton, showStarredButton);
   toggleStarredIdeas();
+  filterIdeas();
 });
 
 function saveIdea() {
@@ -106,3 +108,16 @@ function toggle(visibleElement, hiddenElement) {
 function toggleStarredIdeas() {
   cardContainer.classList.toggle("show-starred");
 }
+
+function filterIdeas() {
+  var ideasToHide = ideas.filter(idea => !idea.title.includes(searchTextField.value) && !idea.body.includes(searchTextField.value));
+  var ideasToShow = ideas.filter(idea => idea.title.includes(searchTextField.value) || idea.body.includes(searchTextField.value));
+  for (var i = 0; i < ideasToHide.length; i++) {
+    var selector = document.getElementById(ideasToHide[i].id);
+    selector.classList.add('hidden');
+  };
+  for (var i = 0; i < ideasToShow.length; i++) {
+    var selector = document.getElementById(ideasToShow[i].id);
+    selector.classList.remove('hidden');
+  };
+};

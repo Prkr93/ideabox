@@ -64,12 +64,6 @@ button {
   background-color: #353567;
 }
 
-span {
-  color: #E9E9F3;
-  font-weight: bold;
-  font-size: .8em;
-}
-
 input {
   color: #1F1F3D;
   height: 3em;
@@ -209,10 +203,14 @@ article.true .favorite-button {
   align-items: center;
 }
 
-.hidden {
-  display: none;
+.comment-bar p {
+  color: #E9E9F3;
+  font-weight: bold;
+  font-size: .8em;
+  padding: 0;
+  margin: 0;
 }
 
-.show-starred .false {
+.hidden {
   display: none;
 }

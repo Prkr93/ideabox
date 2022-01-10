@@ -1,11 +1,11 @@
 var saveButton = document.querySelector(".save-button");
+var titleTextField = document.querySelector("#titleTextField");
+var bodyTextField = document.querySelector("#bodyTextField");
 var searchTextField = document.querySelector("#searchTextField");
 var showStarredButton = document.querySelector("#showStarredButton");
 var showAllButton = document.querySelector("#showAllButton");
-var titleTextField = document.querySelector("#titleTextField");
-var bodyTextField = document.querySelector("#bodyTextField");
 var cardContainer = document.querySelector(".card-container");
-var formField = document.querySelector("form");
+var form = document.querySelector("form");
 var ideas = [];
 
 saveButton.addEventListener("click", function(e) {
@@ -15,21 +15,21 @@ saveButton.addEventListener("click", function(e) {
   clearFields();
 });
 
-formField.addEventListener("input", checkFields);
+form.addEventListener("input", checkFields);
 cardContainer.addEventListener("click", toggleFavorite);
 cardContainer.addEventListener("click", deleteIdea);
 searchTextField.addEventListener("input", filterIdeas);
 showStarredButton.addEventListener("click", function() {
   displayIdeas();
-  toggle(showStarredButton, showAllButton);
-  toggleStarredIdeas();
+  toggleVisibility(showStarredButton, showAllButton);
+  toggleStarredIdeasView();
   filterIdeas();
 });
 
 showAllButton.addEventListener("click", function() {
   displayIdeas();
-  toggle(showAllButton, showStarredButton);
-  toggleStarredIdeas();
+  toggleVisibility(showAllButton, showStarredButton);
+  toggleStarredIdeasView();
   filterIdeas();
 });
 
@@ -101,12 +101,12 @@ function deleteIdea(e) {
   };
 };
 
-function toggle(visibleElement, hiddenElement) {
+function toggleVisibility(visibleElement, hiddenElement) {
   visibleElement.classList.toggle("hidden");
   hiddenElement.classList.toggle("hidden");
 };
 
-function toggleStarredIdeas() {
+function toggleStarredIdeasView() {
   cardContainer.classList.toggle("show-starred");
 }
 

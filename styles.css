@@ -195,3 +195,21 @@ article > div > *:not(div) {
 .delete-button {
   cursor: pointer;
 }
+
+
+
+article .favorite-button {
+  content: url("./assets/star.svg");
+}
+
+article.true .favorite-button {
+  content: url("./assets/star-active.svg");
+}
+
+.hidden {
+  display: none;
+}
+
+.show-starred .false {
+  display: none;
+}

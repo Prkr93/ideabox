@@ -121,7 +121,7 @@ form > * {
   margin: auto;
 }
 
-form > div > *:last-child{
+form > div > *:last-child {
   margin-bottom: 1em;
 }
 
@@ -135,7 +135,7 @@ input::placeholder {
   color: #A9AAD2;
 }
 
-.search-bar{
+.search-bar {
   flex-direction: row;
   border: 2px solid #5356A4;
 }

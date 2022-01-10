@@ -118,7 +118,7 @@ form > * {
   margin: auto;
 }
 
-form > div > * {
+form > div > *:not(label) {
   margin-bottom: 1em;
 }
 

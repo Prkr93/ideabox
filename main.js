@@ -21,20 +21,18 @@ cardContainer.addEventListener("click", deleteIdea);
 searchTextField.addEventListener("input", filterIdeas);
 showStarredButton.addEventListener("click", function() {
   displayIdeas();
-  toggleVisibility(showStarredButton, showAllButton);
   toggleStarredIdeasView();
   filterIdeas();
 });
 
 showAllButton.addEventListener("click", function() {
   displayIdeas();
-  toggleVisibility(showAllButton, showStarredButton);
   toggleStarredIdeasView();
   filterIdeas();
 });
 
 function saveIdea() {
-  if(titleTextField.value && bodyTextField.value) {
+  if (titleTextField.value && bodyTextField.value) {
     ideas.push(new Idea(titleTextField.value, bodyTextField.value));
   };
 };
@@ -101,14 +99,11 @@ function deleteIdea(e) {
   };
 };
 
-function toggleVisibility(visibleElement, hiddenElement) {
-  visibleElement.classList.toggle("hidden");
-  hiddenElement.classList.toggle("hidden");
-};
-
 function toggleStarredIdeasView() {
+  showStarredButton.classList.toggle("hidden");
+  showAllButton.classList.toggle("hidden");
   cardContainer.classList.toggle("show-starred");
-}
+};
 
 function filterIdeas() {
   var articles = document.querySelectorAll("article");

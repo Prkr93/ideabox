@@ -53,7 +53,7 @@ function displayIdeas() {
         <p>${ideas[i].body}</p>
         <div class="comment-bar">
           <img src="./assets/comment.svg"/>
-          <span>Comment</span>
+          <p>Comment</p>
         </div>
       </div>
     </article>`;

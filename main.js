@@ -63,6 +63,7 @@ function displayIdeas() {
 function clearFields() {
   titleTextField.value = "";
   bodyTextField.value = "";
+  saveButton.disabled = true;
 };
 
 function checkFields() {

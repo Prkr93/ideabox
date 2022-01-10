@@ -61,6 +61,7 @@ button {
   font-size: 1em;
   height: 2.5em;
   cursor: pointer;
+  background-color: #353567;
 }
 
 span {
@@ -85,7 +86,6 @@ p {
   color: #1F1F3D;
   font-weight: bold;
   margin-top: 1em;
-  margin-bottom: 1em;
 }
 
 /* sidebar section */
@@ -118,7 +118,7 @@ form > * {
   margin: auto;
 }
 
-form > div > *:last-child {
+form > div > * {
   margin-bottom: 1em;
 }
 
@@ -144,6 +144,7 @@ input::placeholder {
   max-width: initial;
   height: 1.5em;
   padding: 0.5em;
+  margin: 0;
 }
 
 div.search-bar input {
@@ -162,14 +163,11 @@ div.search-bar input {
   cursor: auto;
 }
 
-form button {
-  background-color: #353567;
-}
-
 /* Card Container Section */
 
 article p {
   font-weight: normal;
+  padding: 0 1em;
 }
 
 article > div {
@@ -178,7 +176,7 @@ article > div {
   border: 2px solid #1F1F3D;
 }
 
-article > div > *:not(div) {
+article h4 {
   padding: 0 1em;
 }
 

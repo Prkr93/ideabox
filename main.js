@@ -110,14 +110,13 @@ function toggleStarredIdeas() {
 }
 
 function filterIdeas() {
+  var articles = document.querySelectorAll('article');
+  for (var i = 0; i < ideas.length; i++) {
+    articles[i].classList.remove("hidden");
+  };
   var ideasToHide = ideas.filter(idea => !idea.title.includes(searchTextField.value) && !idea.body.includes(searchTextField.value));
-  var ideasToShow = ideas.filter(idea => idea.title.includes(searchTextField.value) || idea.body.includes(searchTextField.value));
   for (var i = 0; i < ideasToHide.length; i++) {
     var selector = document.getElementById(ideasToHide[i].id);
     selector.classList.add('hidden');
-  };
-  for (var i = 0; i < ideasToShow.length; i++) {
-    var selector = document.getElementById(ideasToShow[i].id);
-    selector.classList.remove('hidden');
   };
 };

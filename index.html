@@ -1,38 +1,38 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <aside>
-      <h1>IdeaBox</h1>
-      <div class="border-box">
-        <h2>Filter Starred Ideas</h2>
-        <button id="showStarredButton">Show Starred Ideas</button>
-        <button id="showAllButton" class="hidden">Show All Ideas</button>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <aside>
+    <h1>IdeaBox</h1>
+    <div class="border-box">
+      <h2>Filter Starred Ideas</h2>
+      <button id="showStarredButton">Show Starred Ideas</button>
+      <button id="showAllButton" class="hidden">Show All Ideas</button>
+    </div>
+  </aside>
+  <main>
+    <form>
+      <div>
+        <label for="titleTextField">Title</label>
+        <input id="titleTextField" type="text"/>
       </div>
-    </aside>
-    <main>
-      <form>
-        <div>
-          <label for="titleTextField">Title</label>
-          <input id="titleTextField" type="text"/>
-        </div>
-        <div>
-          <label for="bodyTextField">Body</label>
-          <textarea id="bodyTextField" rows="4"></textarea>
-        </div>
-        <div>
-          <button class="save-button" disabled>Save</button>
-        </div>
-        <div class="search-bar">
-          <img src="./assets/search.svg"/>
-          <input id="searchTextField" placeholder="Search ideas"/>
-        </div>
-      </form>
-      <section class="card-container"></section>
-    </main>
-    <script type="text/javascript" src="Idea.js"></script>
-    <script type="text/javascript" src="main.js"></script>
-  </body>
+      <div>
+        <label for="bodyTextField">Body</label>
+        <textarea id="bodyTextField" rows="4"></textarea>
+      </div>
+      <div>
+        <button class="save-button" disabled>Save</button>
+      </div>
+      <div class="search-bar">
+        <img src="./assets/search.svg"/>
+        <input id="searchTextField" placeholder="Search ideas"/>
+      </div>
+    </form>
+    <section class="card-container"></section>
+  </main>
+  <script type="text/javascript" src="Idea.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
 </html>

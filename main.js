@@ -110,6 +110,7 @@ function filterIdeas() {
   for (var i = 0; i < ideas.length; i++) {
     articles[i].classList.remove("hidden");
   };
+
   var ideasToHide = ideas.filter(idea => !idea.title.includes(searchTextField.value) && !idea.body.includes(searchTextField.value));
   for (var i = 0; i < ideasToHide.length; i++) {
     var selector = document.getElementById(ideasToHide[i].id);

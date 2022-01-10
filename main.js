@@ -16,17 +16,17 @@ saveButton.addEventListener("click", function(e) {
 });
 
 formField.addEventListener("input", checkFields);
-cardContainer.addEventListener('click', toggleFavorite);
-cardContainer.addEventListener('click', deleteIdea);
-searchTextField.addEventListener('input', filterIdeas);
-showStarredButton.addEventListener('click', function() {
+cardContainer.addEventListener("click", toggleFavorite);
+cardContainer.addEventListener("click", deleteIdea);
+searchTextField.addEventListener("input", filterIdeas);
+showStarredButton.addEventListener("click", function() {
   displayIdeas();
   toggle(showStarredButton, showAllButton);
   toggleStarredIdeas();
   filterIdeas();
 });
 
-showAllButton.addEventListener('click', function() {
+showAllButton.addEventListener("click", function() {
   displayIdeas();
   toggle(showAllButton, showStarredButton);
   toggleStarredIdeas();
@@ -111,13 +111,13 @@ function toggleStarredIdeas() {
 }
 
 function filterIdeas() {
-  var articles = document.querySelectorAll('article');
+  var articles = document.querySelectorAll("article");
   for (var i = 0; i < ideas.length; i++) {
     articles[i].classList.remove("hidden");
   };
   var ideasToHide = ideas.filter(idea => !idea.title.includes(searchTextField.value) && !idea.body.includes(searchTextField.value));
   for (var i = 0; i < ideasToHide.length; i++) {
     var selector = document.getElementById(ideasToHide[i].id);
-    selector.classList.add('hidden');
+    selector.classList.add("hidden");
   };
 };

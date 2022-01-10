@@ -1,5 +1,5 @@
 var saveButton = document.querySelector(".save-button");
-var searchTextField = document.querySelector(".search-bar input");
+var searchTextField = document.querySelector("#searchTextField");
 var showStarredButton = document.querySelector("#showStarredButton");
 var showAllButton = document.querySelector("#showAllButton");
 var titleTextField = document.querySelector("#titleTextField");

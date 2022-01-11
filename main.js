@@ -1,11 +1,11 @@
 var saveButton = document.querySelector(".save-button");
-var searchTextField = document.querySelector(".search-bar input");
+var titleTextField = document.querySelector("#titleTextField");
+var bodyTextField = document.querySelector("#bodyTextField");
+var searchTextField = document.querySelector("#searchTextField");
 var showStarredButton = document.querySelector("#showStarredButton");
 var showAllButton = document.querySelector("#showAllButton");
-var titleTextField = document.querySelector("#title-text-field");
-var bodyTextField = document.querySelector("#body-text-field");
 var cardContainer = document.querySelector(".card-container");
-var formField = document.querySelector("form");
+var form = document.querySelector("form");
 var ideas = [];
 
 saveButton.addEventListener("click", function(e) {
@@ -15,26 +15,24 @@ saveButton.addEventListener("click", function(e) {
   clearFields();
 });
 
-formField.addEventListener("input", checkFields);
-cardContainer.addEventListener('click', toggleFavorite);
-cardContainer.addEventListener('click', deleteIdea);
-searchTextField.addEventListener('input', filterIdeas);
-showStarredButton.addEventListener('click', function() {
+form.addEventListener("input", checkFields);
+cardContainer.addEventListener("click", toggleFavorite);
+cardContainer.addEventListener("click", deleteIdea);
+searchTextField.addEventListener("input", filterIdeas);
+showStarredButton.addEventListener("click", function() {
   displayIdeas();
-  toggle(showStarredButton, showAllButton);
-  toggleStarredIdeas();
+  toggleStarredIdeasView();
   filterIdeas();
 });
 
-showAllButton.addEventListener('click', function() {
+showAllButton.addEventListener("click", function() {
   displayIdeas();
-  toggle(showAllButton, showStarredButton);
-  toggleStarredIdeas();
+  toggleStarredIdeasView();
   filterIdeas();
 });
 
 function saveIdea() {
-  if(titleTextField.value && bodyTextField.value) {
+  if (titleTextField.value && bodyTextField.value) {
     ideas.push(new Idea(titleTextField.value, bodyTextField.value));
   };
 };
@@ -53,7 +51,7 @@ function displayIdeas() {
         <p>${ideas[i].body}</p>
         <div class="comment-bar">
           <img src="./assets/comment.svg"/>
-          <span>Comment</span>
+          <p>Comment</p>
         </div>
       </div>
     </article>`;
@@ -63,6 +61,7 @@ function displayIdeas() {
 function clearFields() {
   titleTextField.value = "";
   bodyTextField.value = "";
+  saveButton.disabled = true;
 };
 
 function checkFields() {
@@ -76,9 +75,9 @@ function checkFields() {
 function toggleFavorite(e) {
   if (e.target.classList.contains("favorite-button") ) {
     var uniqueId = parseInt(e.target.closest("article").id);
+    var ideaCard;
     e.target.closest("article").classList.toggle("true");
     e.target.closest("article").classList.toggle("false");
-    var ideaCard;
     for (var i = 0; i < ideas.length; i++) {
       if (ideas[i].id === uniqueId) {
         ideaCard = ideas[i];
@@ -100,23 +99,19 @@ function deleteIdea(e) {
   };
 };
 
-function toggle(visibleElement, hiddenElement) {
-  visibleElement.classList.toggle("hidden");
-  hiddenElement.classList.toggle("hidden");
+function toggleStarredIdeasView() {
+  showStarredButton.classList.toggle("hidden");
+  showAllButton.classList.toggle("hidden");
+  cardContainer.classList.toggle("show-starred");
 };
 
-function toggleStarredIdeas() {
-  cardContainer.classList.toggle("show-starred");
-}
-
 function filterIdeas() {
-  var articles = document.querySelectorAll('article');
+  displayIdeas();
+
   for (var i = 0; i < ideas.length; i++) {
-    articles[i].classList.remove("hidden");
-  };
-  var ideasToHide = ideas.filter(idea => !idea.title.includes(searchTextField.value) && !idea.body.includes(searchTextField.value));
-  for (var i = 0; i < ideasToHide.length; i++) {
-    var selector = document.getElementById(ideasToHide[i].id);
-    selector.classList.add('hidden');
+    if (!ideas[i].title.includes(searchTextField.value) && !ideas[i].title.includes(searchTextField.value)) {
+      var ideaToHide = document.getElementById(ideas[i].id);
+      ideaToHide.classList.add("hidden");
+    };
   };
 };

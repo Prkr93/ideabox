@@ -75,9 +75,9 @@ function checkFields() {
 function toggleFavorite(e) {
   if (e.target.classList.contains("favorite-button") ) {
     var uniqueId = parseInt(e.target.closest("article").id);
+    var ideaCard;
     e.target.closest("article").classList.toggle("true");
     e.target.closest("article").classList.toggle("false");
-    var ideaCard;
     for (var i = 0; i < ideas.length; i++) {
       if (ideas[i].id === uniqueId) {
         ideaCard = ideas[i];
@@ -106,14 +106,12 @@ function toggleStarredIdeasView() {
 };
 
 function filterIdeas() {
-  var articles = document.querySelectorAll("article");
-  for (var i = 0; i < ideas.length; i++) {
-    articles[i].classList.remove("hidden");
-  };
+  displayIdeas();
 
-  var ideasToHide = ideas.filter(idea => !idea.title.includes(searchTextField.value) && !idea.body.includes(searchTextField.value));
-  for (var i = 0; i < ideasToHide.length; i++) {
-    var selector = document.getElementById(ideasToHide[i].id);
-    selector.classList.add("hidden");
+  for (var i = 0; i < ideas.length; i++) {
+    if (!ideas[i].title.includes(searchTextField.value) && !ideas[i].title.includes(searchTextField.value)) {
+      var ideaToHide = document.getElementById(ideas[i].id);
+      ideaToHide.classList.add("hidden");
+    };
   };
 };

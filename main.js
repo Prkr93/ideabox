@@ -109,7 +109,7 @@ function filterIdeas() {
   displayIdeas();
 
   for (var i = 0; i < ideas.length; i++) {
-    if (!ideas[i].title.includes(searchTextField.value) && !ideas[i].title.includes(searchTextField.value)) {
+    if (!ideas[i].title.includes(searchTextField.value) && !ideas[i].body.includes(searchTextField.value)) {
       var ideaToHide = document.getElementById(ideas[i].id);
       ideaToHide.classList.add("hidden");
     };
